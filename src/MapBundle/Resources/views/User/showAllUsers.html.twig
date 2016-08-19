@@ -1,0 +1,35 @@
+{% extends "::baseAdmin.html.twig" %}
+
+{% block body %}
+    {#    {{ dump(users) }}#}
+    {#{{ dump(loggedUser) }}#}
+
+
+<div class="container">
+    <table class="table table-striped">
+        <tr>
+            <th>id</th>
+            <th>user name</th>
+            <th>role</th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{% for role in user.roles %}
+                    {{ role }}
+                {% endfor %}</td>
+                {% if user.username != "admin" %}
+                 <td><a href="{{path('map_user_deleteuser', {'id': user.id})}}" class="btn btn-danger" role="button">Delete</a></td>
+                 {% endif %}
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+{% block footer %}
+{% endblock %}
+{% endblock %}
+    
+
+    

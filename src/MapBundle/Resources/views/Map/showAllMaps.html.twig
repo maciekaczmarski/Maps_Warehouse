@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+{% for map in allMaps %}
+    <article class="col-md-4 article-intro">
+        <a href="{{path('map_map_showmapbyid', {'id': map.id}) }}">
+            <img src="{{ asset('bundles/map/thumbnails/') }}/{{map.thumbnail}}" alt="{{map.title}}" />
+        </a>
+        <h3>
+            {{ map.title }}
+        </h3>
+    </article>
+{% endfor %}
+{% endblock %}
+{% block footer %}
+{% endblock %}

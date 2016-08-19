@@ -1,0 +1,8 @@
+{% extends "MapBundle:Map:showMap.html.twig" %}
+
+{% block body %}
+    {{parent()}}
+    <article class="col-md-12 article-intro">
+    <a href="{{path('map_map_editmap', {'id': map.id})}}" class="btn btn-info" role="button">Edit</a>
+    </article>
+{% endblock %}

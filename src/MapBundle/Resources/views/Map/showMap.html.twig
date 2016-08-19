@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+{#    {{dump(map)}}#}
+    <article class="col-md-12 article-intro">
+        <a href="{{ asset('bundles/map/thumbnails/') }}/{{map.thumbnail}}">
+            <img src="{{ asset('bundles/map/thumbnails/') }}/{{map.thumbnail}}" alt="{{map.title}}" />
+        </a>
+        <h3>
+            {{ map.title }}
+        </h3>
+        <p>  
+            <strong>Typ:</strong> {{map.type.name}}<br>
+            <strong>Kategoria:</strong> {{map.category.name}}<br>
+            <strong>Godło:</strong> {{map.code}}<br>
+            <strong>Tytuł:</strong> {{map.title}}<br>
+            <strong>Skala:</strong> {{map.scale}}<br>
+            <strong>Data wydania:</strong>  {{map.publicationDate.date}}<br>
+{#            <a href="{{ path('map.path') }}"><strong>Pobierz</strong> </a><br>#}
+
+        </p>
+    </article>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

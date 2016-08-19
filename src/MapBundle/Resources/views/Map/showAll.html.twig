@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+<div class="container">
+  {% for category in allCategories %}  
+    <table class="table">
+    <tbody>
+      <tr>
+        <th>Nazwa kategorii</th>
+        <td>{{category.name}}</td>
+      </tr>
+      <tr>
+        <th>Opis</th>
+        <td>{{category.categoryDescription}}</td>
+      </tr>
+      <tr>
+        <td><a href="{{path('map_category_editcategory', {'id': category.id}) }}" class="btn btn-info" role="button">Edytuj</a>
+            <a href="{{path('map_category_deletecategory', {'id': category.id}) }}" class="btn btn-danger" role="button">Usuń</a></td>
+      </tr>
+    </tbody>
+    </table>
+    {% endfor %}
+</div>
+{% endblock %}
+{% block footer %}
+    
+
+{% endblock %}
